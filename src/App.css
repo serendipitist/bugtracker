@@ -37,6 +37,7 @@ table th {
 
 form {
   margin: 5px 0;
+  font-size: 14px;
 }
 
 .add-new-bug-form button {

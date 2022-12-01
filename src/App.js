@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import './App.css';
 import { v4 as uuid } from "uuid";
-import BugTable from './buglistTable';
+import BugTable from './bugListTable';
 
 function App() {
   const [newBugDescription, setNewBugDescription] = useState("");
@@ -11,6 +11,9 @@ function App() {
 
   const addBug = (event) => {
     event.preventDefault();
+    if((newBugDescription === '')) {
+      alert('please enter valid description');
+    } else {
     const newBug = {
       id: uuid(),
       description: newBugDescription,
@@ -26,7 +29,7 @@ function App() {
 
     setNewBugDescription('');
     setNewBugPriority('Medium');
-    console.log(bugList);
+    }
   };
 
 
